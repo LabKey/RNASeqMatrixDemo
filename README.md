@@ -1,2 +1,53 @@
 RNASeqMatrixDemo
 ================
+
+Demo of LabKey Server's module file-based pipeline using RNASeq data.  This simple pipeline reformats an existing matrix into one appropriate for importing into LabKey, performs further analysis and generates images, and imports the analyis results.
+
+Pre-requisites:
+---------------
+
+1. Install LabKey Server and ensure the Microarray module is included.
+
+2. Install this module by zipping up the root RNASeqMatrixDemo directory and copying to the server's "modules" directory.
+
+3. Obtain the RNASeq matrix "GSE56845_gene_counts_Rhesus_Ensembl.txt" from Geo:
+http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE56845
+
+> Barrenas F, Palermo RE, Agricola B, Agy MB, Aicher L, Carter V, Flanary L,
+Green RR, McLain R, Li Q, Lu W, Murnane R, Peng X, Thomas MJ, Weiss JM, Anderson 
+DM, Katze MG. Deep transcriptional sequencing of mucosal challenge compartment
+from rhesus macaques acutely infected with simian immunodeficiency virus
+implicates loss of cell adhesion preceding immune activation. J Virol. 2014 Jul
+15;88(14):7962-72. doi: 10.1128/JVI.00543-14. Epub 2014 May 7. PubMed PMID:
+24807713.
+
+
+Setup
+-----
+
+1. Start the server.
+2. Create a new assay folder, enable the RNASeqMatrixDemo module.
+3. Upload the matrix file to the folder.
+3. Create a new ExpressionMatrix assay with the default fields.
+4. Add the "Feature Annotation Sets" webpart to the portal.
+5. Import the "illumina-feature-set.tsv" found in the root of this module.
+4. Create a new "General" assay named "DifferentialExpression" and with the following fields:
+  1. FeatureId (Text)
+  2. logConc (Number)
+  3. logFC (Number)
+  4. pvalue (Number)
+  5. padj (Number)
+
+
+Running the Pipeline
+--------------------
+
+From the file-browser, select the matrix file then click "Import Data".
+
+<img src="https://raw.github.com/LabKey/RNASeqDemo/docs/img/import-data.png" />
+
+Next, enter a name for the run and select the target ExpressionMatrix assay and the feature annotation set you created during the setup.  By default, the "Import Values" checkbox is unchecked and the matrix will not be imported into the assay -- only pointers to the original data file and the output files will be captured as part of the run.
+
+<img src="https://raw.github.com/LabKey/RNASeqDemo/docs/img/create-matrix-form.png" />
+
+As the pipeline executes, files are written into the pipeline directory under a "RNASeqMatrixDemo" directory.  The final output is a series of images and a file of differentially expressed genes which is then imported into the "DifferentialExpression" assay.
