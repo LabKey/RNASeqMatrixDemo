@@ -1,0 +1,16 @@
+<task xmlns="http://labkey.org/pipeline/xml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="ScriptTaskType"
+      name="NormalizeMatrix" version="0.0">
+    <description>NormalizeMatrix</description>
+    <inputs>
+      <file name="input.counts.tsv" suffixes=".counts.tsv"/>
+    </inputs>
+    <outputs>
+      <file name="output-mds.png" suffixes=".mds.png" />
+      <file name="output-var.png" suffixes=".var.png" />
+      <file name="output.tsv"/>
+    </outputs>
+    <script file="norm-matrix.R"/>
+</task>
+

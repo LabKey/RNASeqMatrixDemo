@@ -1,0 +1,10 @@
+<task xmlns="http://labkey.org/pipeline/xml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:type="ScriptTaskType"
+      name="FilterMatrix" version="0.0">
+    <description>FilterMatrix</description>
+    <outputs>
+      <file name="output.counts.tsv" suffixes=".counts.tsv"/>
+    </outputs>
+    <script file="filter-matrix.R"/>
+</task>

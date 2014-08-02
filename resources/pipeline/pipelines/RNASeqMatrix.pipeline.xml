@@ -1,0 +1,19 @@
+<pipeline xmlns="http://labkey.org/pipeline/xml"
+          xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+          name="RNASeqMatrix" version="0.0">
+    <description>RNASeq Expression Matrix</description>
+    <analyzeURL>/RNASeqMatrixDemo/CreateMatrix.view</analyzeURL>
+    <tasks>
+        <taskref ref="RNASeqMatrixDemo:task:FilterMatrix"/>
+        <task xsi:type="AssayImportRunTaskType">
+            <providerName>ExpressionMatrix</providerName>
+        </task>
+
+        <taskref ref="RNASeqMatrixDemo:task:NormalizeMatrix"/>
+        <task xsi:type="AssayImportRunTaskType">
+            <providerName>General</providerName>
+            <protocolName>DifferentialExpression</protocolName>
+        </task>
+    </tasks>
+</pipeline>
+
