@@ -10,7 +10,9 @@ Pre-requisites:
 
 2. Install this module by zipping up the root RNASeqMatrixDemo directory and copying to the server's "modules" directory.
 
-3. Obtain the RNASeq matrix "GSE56845_gene_counts_Rhesus_Ensembl.txt" from Geo:
+3. Install R and the "edgeR" bioconductor package.
+
+4. Obtain the RNASeq matrix "GSE56845_gene_counts_Rhesus_Ensembl.txt" from Geo:
 http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE56845
 
 > Barrenas F, Palermo RE, Agricola B, Agy MB, Aicher L, Carter V, Flanary L,
@@ -20,6 +22,7 @@ from rhesus macaques acutely infected with simian immunodeficiency virus
 implicates loss of cell adhesion preceding immune activation. J Virol. 2014 Jul
 15;88(14):7962-72. doi: 10.1128/JVI.00543-14. Epub 2014 May 7. PubMed PMID:
 24807713.
+
 
 
 Setup
