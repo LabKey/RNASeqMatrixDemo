@@ -3,14 +3,16 @@ RNASeqMatrixDemo
 
 Demo of LabKey Server's module file-based pipeline using RNASeq data.  This simple pipeline reformats an existing matrix into one appropriate for importing into LabKey, performs further analysis and generates images, and imports the analyis results.
 
-Pre-requisites:
+Prerequisites:
 ---------------
 
-1. Install LabKey Server and ensure the Microarray module is included.
+1. Install LabKey Server (14.2 at a minimum) and ensure the Microarray module is included.
 
 2. Install this module by zipping up the root RNASeqMatrixDemo directory and copying to the server's "modules" directory.
 
 3. Install R and the "edgeR" bioconductor package.
+  - source("http://www.bioconductor.org/biocLite.R")
+  - biocLite("edgeR")
 
 4. Obtain the RNASeq matrix "GSE56845_gene_counts_Rhesus_Ensembl.txt" from Geo:
 http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE56845
@@ -30,16 +32,16 @@ Setup
 
 1. Start the server.
 2. Create a new assay folder, enable the RNASeqMatrixDemo module.
-3. Upload the matrix file to the folder.
+3. Upload the "GSE56845_gene_counts_Rhesus_Ensembl.txt" matrix file to the folder.
 3. Create a new ExpressionMatrix assay with the default fields.
 4. Add the "Feature Annotation Sets" webpart to the portal.
 5. Import the "illumina-feature-set.tsv" found in the root of this module.
 4. Create a new "General" assay named "DifferentialExpression" and with the following fields:
-  1. FeatureId (Text)
-  2. logConc (Number)
-  3. logFC (Number)
-  4. pvalue (Number)
-  5. padj (Number)
+  - FeatureId (Text)
+  - logConc (Number)
+  - logFC (Number)
+  - pvalue (Number)
+  - padj (Number)
 
 
 Running the Pipeline
