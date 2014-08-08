@@ -57,7 +57,11 @@ Next, enter a name for the run and select the target ExpressionMatrix assay and 
 
 As the pipeline executes, files are written into the pipeline directory under a "RNASeqMatrixDemo" directory.  The pipeline will create two assay runs: one ExpressionMatrix assay run and one DifferentialExpression assay run.  As a part of the differential expression analysis, a series of images will also be generated.  Further analysis could be performed on the values imported into the DifferentialExpression assay.
 
-The original input file and the output filess will be attached to the experiment run:
+The original input file and samples in the filtered matrix will be attached to an experiment run for the ExpressionMatrix assay import:
+
+<img src="https://raw.githubusercontent.com/LabKey/RNASeqMatrixDemo/master/docs/img/matrix-exp-run.png" />
+
+The filtered matrix file and the output files will be attached to an experiment run for the DifferentialExpression assay import:
 
 <img src="https://raw.githubusercontent.com/LabKey/RNASeqMatrixDemo/master/docs/img/diff-expr-exp-run.png"/>
 
