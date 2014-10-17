@@ -14,7 +14,7 @@ Prerequisites:
   - source("http://www.bioconductor.org/biocLite.R")
   - biocLite("edgeR")
 
-4. Obtain the RNASeq matrix "GSE56845_gene_counts_Rhesus_Ensembl.txt" from Geo:
+4. Use the "data/GSE56845_counts.txt" RNASeq matrix or obtain the original "GSE56845_gene_counts_Rhesus_Ensembl.txt" from Geo:
 http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE56845
 
 > Barrenas F, Palermo RE, Agricola B, Agy MB, Aicher L, Carter V, Flanary L,
@@ -32,16 +32,20 @@ Setup
 
 1. Start the server.
 2. Create a new assay folder, enable the RNASeqMatrixDemo module.
-3. Upload the "GSE56845_gene_counts_Rhesus_Ensembl.txt" matrix file to the folder.
+3. Upload the "GSE56845_counts.txt" matrix file to the folder.
 3. Create a new ExpressionMatrix assay with the default fields.
 4. Add the "Feature Annotation Sets" webpart to the portal.
-5. Import the "illumina-feature-set.tsv" found in the root of this module.
+5. Import the "illumina-feature-set.tsv" found in the "data" directory of this module.
 4. Create a new "General" assay named "DifferentialExpression" and with the following fields:
-  - FeatureId (Text)
-  - logConc (Number)
-  - logFC (Number)
-  - pvalue (Number)
-  - padj (Number)
+  * Run Fields:
+    - multiDimensionalScalingPlot (label=MDS, type=File)
+    - meanVariancePlot (label=Variance, type=File)
+  * Data Fields:
+    - FeatureId (Text)
+    - logConc (Number)
+    - logFC (Number)
+    - pvalue (Number)
+    - padj (Number)
 
 
 Running the Pipeline
