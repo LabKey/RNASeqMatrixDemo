@@ -17,7 +17,8 @@ head(raw.data)
 
 #I am only interested in the Baseline samples and Infected samples at later time points
 #I will select only those columns I am interested in.
-
+# 3,4,5 - mocks or baseline
+# 15,17,19 - infected samples
 counts <- raw.data[,c(3,4,5,15,17,19) ]
 
 #I want to keep the gene names because I know I will need them later for analysis so I will store them

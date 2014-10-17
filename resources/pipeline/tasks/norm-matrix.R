@@ -148,3 +148,18 @@ colnames(res)[1] <- "FeatureId"
 
 write.table(res, file = "${output.tsv}", sep = "\t", row.names=FALSE);
 
+# read the task info
+taskInfo <- read.table("${pipeline, taskInfo}",
+                       col.names=c("name", "value", "type"),
+                       header=FALSE, check.names=FALSE,
+                       stringsAsFactors=FALSE, sep="\t", quote="",
+                       fill=TRUE, na.strings="")
+
+# write out run properties to attach the generated images to the run
+outputParams <- data.frame(name=c("assay run property, multiDimensionalScalingPlot",
+                                  "assay run property, meanVariancePlot"),
+                           value=c(file.path(taskInfo$value[taskInfo$name == "analysisDirectory"], "${output-mds.png}"),
+                                   file.path(taskInfo$value[taskInfo$name == "analysisDirectory"], "${output-var.png}")))
+
+write.table(outputParams, file = "${pipeline, taskOutputParams}", sep = "\t", qmethod="double", col.names=TRUE, row.names=FALSE)
+
