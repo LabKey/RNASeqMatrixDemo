@@ -6,7 +6,7 @@ Demo of LabKey Server's module file-based pipeline using RNASeq data.  This simp
 Prerequisites:
 ---------------
 
-1. Install LabKey Server (14.2 at a minimum) and ensure the Microarray module is included.
+1. Install LabKey Server (14.3 is required) and ensure the Microarray module is included.
 
 2. Install this module by zipping up the root RNASeqMatrixDemo directory and copying to the server's "modules" directory.
 
