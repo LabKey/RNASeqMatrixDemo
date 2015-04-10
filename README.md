@@ -78,13 +78,9 @@ The output file values will be imported into the assay's results table:
 Known Issues
 ------------
 
-1. [Issue 19545](https://www.labkey.org/issues/home/Developer/issues/details.view?issueId=19545): R pipeline scripts don't support folder names containing spaces
+1. [Issue 19066](https://www.labkey.org/issues/home/Developer/issues/details.view?issueId=19066): Can't write task that has inputs and outputs of the same extension
 
-2. [Issue 19066](https://www.labkey.org/issues/home/Developer/issues/details.view?issueId=19066): Can't write task that has inputs and outputs of the same extension
-
-3. [Issue 19064](https://www.labkey.org/issues/home/Developer/issues/details.view?issueId=19064): Can't write task that operates on full input file names instead of extension
-
-4. [Issue 20143](https://www.labkey.org/issues/home/Developer/issues/details.view?issueId=20143): Can't specify alternate output directory
+2. [Issue 19064](https://www.labkey.org/issues/home/Developer/issues/details.view?issueId=19064): Can't write task that operates on full input file names instead of extension
 
 
 
