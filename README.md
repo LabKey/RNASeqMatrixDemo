@@ -32,7 +32,6 @@ Setup
 
 1. Start the server.
 2. Create a new assay folder, enable the RNASeqMatrixDemo module.
-  * Don't use any space characters in the folder name to avoid [Issue 19545](https://www.labkey.org/issues/home/Developer/issues/details.view?issueId=19545).
 3. Upload the "GSE56845_counts.txt" matrix file to the folder.
 3. Create a new ExpressionMatrix assay with the default fields.
 4. Add the "Feature Annotation Sets" webpart to the portal.
